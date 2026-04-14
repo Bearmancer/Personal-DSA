@@ -5,207 +5,217 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-@SuppressWarnings({"ConstantConditions", "ReturnOfNull", "unused", "unchecked"})
+@SuppressWarnings(
+	{ "ConstantConditions", "ReturnOfNull", "unused", "unchecked" }
+)
 public class DynamicArray<T> implements Iterable<T> {
 
-    private static final int DEFAULT_CAPACITY = 10;
-    private Object[] elements;
-    private int size;
+	private static final int DEFAULT_CAPACITY = 10;
+	private Object[] elements;
+	private int size;
 
-    //region - Constructors
-    public DynamicArray() {
-        // TODO
-    }
+	//region - Constructors
+	public DynamicArray() {
+		// TODO
+	}
 
-    public DynamicArray(int initialCapacity) {
-        // TODO
-    }
+	public DynamicArray(int initialCapacity) {
+		// TODO
+	}
 
-    public DynamicArray(T[] array) {
-        // TODO
-    }
-    //endregion
+	public DynamicArray(T[] array) {
+		// TODO
+	}
 
-    //region - Add
-    public void add(T value) {
-        // TODO
-    }
+	//endregion
 
-    public void addAt(int index, T value) {
-        // TODO
-    }
+	//region - Add
+	public void add(T value) {
+		// TODO
+	}
 
-    public void addFirst(T value) {
-        // TODO
-    }
+	public void addAt(int index, T value) {
+		// TODO
+	}
 
-    public void addLast(T value) {
-        // TODO
-    }
+	public void addFirst(T value) {
+		// TODO
+	}
 
-    public void addAll(Collection<? extends T> collection) {
-        // TODO
-    }
+	public void addLast(T value) {
+		// TODO
+	}
 
-    public void addAll(T[] array) {
-        // TODO
-    }
-    //endregion
+	public void addAll(Collection<? extends T> collection) {
+		// TODO
+	}
 
-    //region - Delete
-    public T removeAt(int index) {
-        // TODO
-        return null;
-    }
+	public void addAll(T[] array) {
+		// TODO
+	}
 
-    public T removeFirst() {
-        // TODO
-        return null;
-    }
+	//endregion
 
-    public T removeLast() {
-        // TODO
-        return null;
-    }
+	//region - Delete
+	public T removeAt(int index) {
+		// TODO
+		return null;
+	}
 
-    public boolean removeValue(T value) {
-        // TODO
-        return false;
-    }
+	public T removeFirst() {
+		// TODO
+		return null;
+	}
 
-    public boolean removeAll(Collection<? extends T> collection) {
-        // TODO
-        return false;
-    }
+	public T removeLast() {
+		// TODO
+		return null;
+	}
 
-    public void clear() {
-        // TODO
-    }
-    //endregion
+	public boolean removeValue(T value) {
+		// TODO
+		return false;
+	}
 
-    //region - Get
-    public T get(int index) {
-        // TODO
-        return null;
-    }
+	public boolean removeAll(Collection<? extends T> collection) {
+		// TODO
+		return false;
+	}
 
-    public T getFirst() {
-        // TODO
-        return null;
-    }
+	public void clear() {
+		// TODO
+	}
 
-    public T getLast() {
-        // TODO
-        return null;
-    }
+	//endregion
 
-    public int indexOf(T value) {
-        // TODO
-        return -1;
-    }
+	//region - Get
+	public T get(int index) {
+		// TODO
+		return null;
+	}
 
-    public int lastIndexOf(T value) {
-        // TODO
-        return -1;
-    }
+	public T getFirst() {
+		// TODO
+		return null;
+	}
 
-    public List<Integer> allIndicesOf(T value) {
-        // TODO
-        return null;
-    }
-    //endregion
+	public T getLast() {
+		// TODO
+		return null;
+	}
 
-    //region - Set
-    public void set(int index, T value) {
-        // TODO
-    }
+	public int indexOf(T value) {
+		// TODO
+		return -1;
+	}
 
-    public void setFirst(T value) {
-        // TODO
-    }
+	public int lastIndexOf(T value) {
+		// TODO
+		return -1;
+	}
 
-    public void setLast(T value) {
-        // TODO
-    }
-    //endregion
+	public List<Integer> allIndicesOf(T value) {
+		// TODO
+		return null;
+	}
 
-    //region - Utilities
-    public int size() {
-        // TODO
-        return 0;
-    }
+	//endregion
 
-    public int capacity() {
-        // TODO
-        return 0;
-    }
+	//region - Set
+	public void set(int index, T value) {
+		// TODO
+	}
 
-    public boolean isEmpty() {
-        // TODO
-        return false;
-    }
+	public void setFirst(T value) {
+		// TODO
+	}
 
-    public boolean contains(T value) {
-        // TODO
-        return false;
-    }
+	public void setLast(T value) {
+		// TODO
+	}
 
-    public void ensureCapacity(int minCapacity) {
-        // TODO
-    }
+	//endregion
 
-    public void trimToSize() {
-        // TODO
-    }
+	//region - Utilities
+	public int size() {
+		// TODO
+		return 0;
+	}
 
-    public T[] toArray() {
-        // TODO
-        return null;
-    }
+	public int capacity() {
+		// TODO
+		return 0;
+	}
 
-    public DynamicArray<T> subList(int fromIndex, int toIndex) {
-        // TODO
-        return null;
-    }
+	public boolean isEmpty() {
+		// TODO
+		return false;
+	}
 
-    public void reverse() {
-        // TODO
-    }
+	public boolean contains(T value) {
+		// TODO
+		return false;
+	}
 
-    public void sort(Comparator<? super T> comparator) {
-        // TODO
-    }
-    //endregion
+	public void ensureCapacity(int minCapacity) {
+		// TODO
+	}
 
-    //region - Private Helpers
-    private void ensureCapacityInternal(int minCapacity) {
-        // TODO
-    }
+	public void trimToSize() {
+		// TODO
+	}
 
-    private void grow(int minCapacity) {
-        // TODO
-    }
+	public T[] toArray() {
+		// TODO
+		return null;
+	}
 
-    private void rangeCheck(int index) {
-        // TODO
-    }
+	public DynamicArray<T> subList(int fromIndex, int toIndex) {
+		// TODO
+		return null;
+	}
 
-    private void rangeCheckForAdd(int index) {
-        // TODO
-    }
-    //endregion
+	public void reverse() {
+		// TODO
+	}
 
-    //region - Iterator
-    @Override
-    public Iterator<T> iterator() {
-        // TODO
-        return null;
-    }
-    //endregion
+	public void sort(Comparator<? super T> comparator) {
+		// TODO
+	}
 
-    @Override
-    public String toString() {
-        // TODO
-        return "[]";
-    }
+	//endregion
+
+	//region - Private Helpers
+	private void ensureCapacityInternal(int minCapacity) {
+		// TODO
+	}
+
+	private void grow(int minCapacity) {
+		// TODO
+	}
+
+	private void rangeCheck(int index) {
+		// TODO
+	}
+
+	private void rangeCheckForAdd(int index) {
+		// TODO
+	}
+
+	//endregion
+
+	//region - Iterator
+	@Override
+	public Iterator<T> iterator() {
+		// TODO
+		return null;
+	}
+
+	//endregion
+
+	@Override
+	public String toString() {
+		// TODO
+		return "[]";
+	}
 }

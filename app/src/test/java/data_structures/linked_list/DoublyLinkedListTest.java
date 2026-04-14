@@ -1,16 +1,11 @@
 package data_structures.linked_list;
 
-import java.util.List;
+import java.util.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import data_structures.linked_list.DoublyLinkedList.Node;
@@ -27,48 +22,26 @@ class DoublyLinkedListTest {
         list = new DoublyLinkedList<>(Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    //region - Node Helpers (direct field access)
-    private Node<Integer> getHead() {
-        return list.head;
-    }
+    private Node<Integer> getHead() { return list.head; }
+    private Node<Integer> getTail() { return list.tail; }
+    private Node<Integer> getNext(Node<Integer> n) { return n.next; }
+    private Node<Integer> getPrev(Node<Integer> n) { return n.prev; }
+    private Integer getValue(Node<Integer> n) { return n.value; }
 
-    private Node<Integer> getTail() {
-        return list.tail;
-    }
-
-    private Node<Integer> getNext(Node<Integer> node) {
-        return node.next;
-    }
-
-    private Node<Integer> getPrev(Node<Integer> node) {
-        return node.prev;
-    }
-
-    private Integer getValue(Node<Integer> node) {
-        return node.value;
-    }
-
-    private Node<Integer> walkNext(Node<Integer> node, int steps) {
-        Node<Integer> curr = node;
-        for (int i = 0; i < steps; i++) {
-            curr = getNext(curr);
+    private Node<Integer> nodeAtIndexFromFirstElement(int index) {
+        Node<Integer> curr = list.head;
+        for (int i = 0; i <= index; i++) {
+            curr = curr.next;
         }
         return curr;
-    }
-
-    /**
-     * Walks from head sentinel to reach the node at the given 0-based index.
-     */
-    private Node<Integer> nodeAtIndexFromFirstElement(int index) {
-        return walkNext(getHead(), index + 1);
     }
 
     private Integer valueAtIndexFromHead(int index) {
         return list.get(index);
     }
-    //endregion
 
-    //region - Add
+
+
     @Nested
     class Add {
 
@@ -431,8 +404,8 @@ class DoublyLinkedListTest {
         }
     }
 
-    //endregion
-    //region - Read
+
+
     @Nested
     class Read {
 
@@ -1390,8 +1363,8 @@ class DoublyLinkedListTest {
         }
     }
 
-    //endregion
-    //region - Delete
+
+
     @Nested
     class Delete {
 
@@ -1709,8 +1682,8 @@ class DoublyLinkedListTest {
         }
     }
 
-    //endregion
-    //region - Update
+
+
     @Nested
     class Update {
 
@@ -1889,8 +1862,8 @@ class DoublyLinkedListTest {
         }
     }
 
-    //endregion
-    //region - Stress
+
+
     @Nested
     class Stress {
 
@@ -1934,9 +1907,9 @@ class DoublyLinkedListTest {
             }
         }
     }
-    //endregion
 
-    //region - Sentinel Integrity
+
+
     @Nested
     class SentinelIntegrity {
 
@@ -2021,9 +1994,9 @@ class DoublyLinkedListTest {
                     .isSameAs(lastNode);
         }
     }
-    //endregion
 
-    //region - Bidirectional Navigation
+
+
     @Nested
     class BidirectionalNavigation {
 
@@ -2076,9 +2049,9 @@ class DoublyLinkedListTest {
         }
     }
 
-    //endregion
 
-	//region - Edge Cases
+
+
 	@Nested
 	class EdgeCases {
 
@@ -2201,13 +2174,13 @@ class DoublyLinkedListTest {
 			}
 		}
 	}
-	//endregion
 
-	//region - Integration
+
+
 	@Nested
 	class Integration {
 
-		//region - Bidirectional Traversal
+
 		@Nested
 		class Bidirectional_Traversal {
 
@@ -2249,9 +2222,9 @@ class DoublyLinkedListTest {
 				}
 			}
 		}
-		//endregion
 
-		//region - Deque Operations
+
+
 		@Nested
 		class Deque_Operations {
 
@@ -2281,9 +2254,9 @@ class DoublyLinkedListTest {
 				softly.assertThat(list.size).isGreaterThan(0);
 			}
 		}
-		//endregion
 
-		//region - Sentinel Node Integrity
+
+
 		@Nested
 		class Sentinel_Node_Integrity {
 
@@ -2329,9 +2302,9 @@ class DoublyLinkedListTest {
 				softly.assertThat(list.isEmpty()).isTrue();
 			}
 		}
-		//endregion
 
-		//region - Node Operations
+
+
 		@Nested
 		class Node_Operations {
 
@@ -2365,9 +2338,9 @@ class DoublyLinkedListTest {
 				softly.assertThat(list.get(3)).isEqualTo(5);
 			}
 		}
-		//endregion
 
-		//region - Search Operations
+
+
 		@Nested
 		class Search_Operations {
 
@@ -2400,9 +2373,9 @@ class DoublyLinkedListTest {
 				}
 			}
 		}
-		//endregion
 
-		//region - Bulk Operations
+
+
 		@Nested
 		class Bulk_Operations {
 
@@ -2445,9 +2418,9 @@ class DoublyLinkedListTest {
 				softly.assertThat(after[0]).isEqualTo(5);
 			}
 		}
-		//endregion
 
-		//region - Boundary_Values
+
+
 		@Nested
 		class Boundary_Values {
 
@@ -2490,9 +2463,9 @@ class DoublyLinkedListTest {
 				softly.assertThat(list.get(1)).isZero();
 			}
 		}
-		//endregion
 
-		//region - Performance Scenarios
+
+
 		@Nested
 		class Performance_Scenarios {
 
@@ -2535,8 +2508,8 @@ class DoublyLinkedListTest {
 				}
 			}
 		}
-		//endregion
+
 	}
-	//endregion
+
 
 }

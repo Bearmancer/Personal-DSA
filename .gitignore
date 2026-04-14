@@ -1,16 +1,32 @@
-# Gradle
-/.gradle/
-/build/
-/out/
-**/build/
+# Java
+*.class
+*.log
+hs_err_pid*
+replay_pid*
 
-# Common compiled output
-**/bin/
-*/bin/
+# Gradle
+.gradle/
+**/build/
+!**/src/**/build/
+out/
+bin/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+!*.code-workspace
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Generated docs (optional; build/ already covers it)
-build/docs/
+# User-specific
+local.properties

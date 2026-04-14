@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-@SuppressWarnings({"ConstantConditions", "ReturnOfNull"})
+@SuppressWarnings({ "ConstantConditions", "ReturnOfNull" })
 public class SinglyLinkedList<T> {
+
 	public Node<T> head;
 	public Node<T> tail;
 	public int size;
@@ -107,7 +108,8 @@ public class SinglyLinkedList<T> {
 
 		throw new NoSuchElementException();
 	}
-//endregion
+
+	//endregion
 
 	//region - Delete
 	public T deleteFirst() {
@@ -184,7 +186,6 @@ public class SinglyLinkedList<T> {
 		};
 	}
 
-
 	public boolean deleteValue(T value) {
 		if (isEmpty()) {
 			throw new IllegalStateException();
@@ -216,7 +217,8 @@ public class SinglyLinkedList<T> {
 
 		return false;
 	}
-//endregion
+
+	//endregion
 
 	//region - Get
 	public T getFirst() {
@@ -309,7 +311,8 @@ public class SinglyLinkedList<T> {
 
 		return curr;
 	}
-//endregion
+
+	//endregion
 
 	//region - Set
 	public void setFirst(T value) {
@@ -335,7 +338,8 @@ public class SinglyLinkedList<T> {
 
 		getNode(index).value = value;
 	}
-//endregion
+
+	//endregion
 
 	//region - Utilities
 	public int size() {
@@ -393,10 +397,12 @@ public class SinglyLinkedList<T> {
 
 		return sb.toString();
 	}
-//endregion
+
+	//endregion
 
 	//region - Node
 	public static class Node<T> {
+
 		public T value;
 		public Node<T> next;
 
@@ -414,5 +420,5 @@ public class SinglyLinkedList<T> {
 			return value + " -> ";
 		}
 	}
-//endregion
+	//endregion
 }

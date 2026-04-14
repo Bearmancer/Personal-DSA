@@ -1,21 +1,16 @@
 package data_structures.linked_list;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import data_structures.linked_list.SinglyLinkedList.Node;
 
+@SuppressWarnings({"ConstantConditions", "unused"})
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 @ExtendWith(SoftAssertionsExtension.class)
 class SinglyLinkedListTest {
@@ -1807,7 +1802,7 @@ class SinglyLinkedListTest {
 		}
 	}
 
-	//region - Helper Methods
+
 	private void buildList(Integer... values) {
 		if (values.length == 0) return;
 		list.head = new Node<>(values[0]);
@@ -1835,6 +1830,6 @@ class SinglyLinkedListTest {
 		for (int i = 0; i < count; i++) values[i] = i;
 		buildList(values);
 	}
-	//endregion
+
 
 }

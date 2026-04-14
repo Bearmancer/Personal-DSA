@@ -48,7 +48,7 @@ public class ArrayStack<T> implements Stack<T>, Iterable<T> {
         return null;
     }
 
-    public T peekAt(int distanceFromTop) {
+    public T peekAt(int distance) {
         // TODO
         return null;
     }
